@@ -5,7 +5,7 @@ body {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	margin-top: 60px;
+	margin-top: 1em;
 }
 .column {
 	width: 40%;
@@ -20,7 +20,7 @@ section {
 #data-input form {
 	display: flex;
 	flex-direction: column;
-	line-height: 22px;
+	line-height: 1.5em;
 }
 #headline-display {
 	border: 3px solid black;
@@ -29,4 +29,14 @@ section {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+#data-output pre {
+	padding: 10px;
+	background: #f4f4f4;
+	border-left: 3px solid #2622f3;
+	color: #666;
+	font-family: monospace;
+	font-size: 15px;
+	line-height: 1.6;
 }
