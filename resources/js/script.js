@@ -1,29 +1,64 @@
-const display_info_container = document.getElementById('display-info');
-const draw_info_container = document.getElementById('draw-info');
-const user_input = document.getElementById('user-input');
-function display_info() {
-	let infoStr = '';
-	let width_input = document.getElementById('box-width');
-	let height_input = document.getElementById('box-height');
-	let color_input = document.getElementById('box-color');
-	infoStr += `<h2>Width</h2> <p>${width_input.value} px</p>
-    <h2>Height</h2> <p>${height_input.value} px</p>
-    <h2>Color</h2> <p>${color_input.value} px</p>`;
-	display_info_container.innerHTML = infoStr;
+const headline_display_container = document.getElementById('headline-display');
+function update_headline() {
+	let headlineStr = '';
+	const headline_input = document.getElementById('enter-text');
+	headlineStr += `<h1 id="headline">${headline_input.value}</h1>`;
+	headline_display_container.innerHTML = headlineStr;
 }
-display_info();
-
-function draw_info() {
-	let infoStr = '';
-	let width_input = document.getElementById('box-width');
-	let height_input = document.getElementById('box-height');
-	let color_input = document.getElementById('box-color');
-	infoStr += `<h1>Color</h1> <div style="width:${width_input.value}px; height:${height_input.value}px; background-color:${color_input.value}"></div>`;
-	draw_info_container.innerHTML = infoStr;
+update_headline();
+const display_target = document.getElementById('headline');
+function update_font_size() {
+	const sizeInput = document.getElementById('input-size');
+	display_target.style.fontSize = parseInt(sizeInput.value) + 'px';
 }
-draw_info();
+function update_fontfamily() {
+	const fontfamily_input = document.getElementById('select-font');
+	display_target.style['font-family'] = fontfamily_input.value;
+}
+function update_color() {
+	const color_input = document.getElementById('input-color');
+	display_target.style.color = color_input.value;
+}
+function update_bg_color() {
+	const bg_color_input = document.getElementById('input-bg-color');
+	display_target.style.backgroundColor = bg_color_input.value;
+}
+update_fontfamily();
+update_font_size();
+update_color();
+update_bg_color();
 
-user_input.onchange = function (e) {
-	display_info();
-	draw_info();
+// Handling the dymatic update
+const data_input = document.getElementById('data-input');
+data_input.onchange = function (e) {
+	if (e.target && e.target.id === 'input-size') {
+		update_font_size();
+	} else if (e.target && e.target.id === 'select-font') {
+		update_fontfamily();
+	} else if (e.target && e.target.id === 'input-color') {
+		update_color();
+	} else if (e.target && e.target.id === 'input-bg-color') {
+		update_bg_color();
+	}
 };
+const headline_input = document.getElementById('enter-text');
+headline_input.addEventListener('input', update_headline);
+
+// Handling data output
+const data_output = document.getElementById('data-output');
+
+function show_data_output() {
+	let outputStr = '';
+	const sizeInput = document.getElementById('input-size');
+	const fontfamily_input = document.getElementById('select-font');
+	const color_input = document.getElementById('input-color');
+	const bg_color_input = document.getElementById('input-bg-color');
+	outputStr += `<pre><code>.headline {
+		font-size: <span id="show-size">${sizeInput.value}</span>px;
+		font-family: <span id="show-font">${fontfamily_input.value}</span>;
+		color: <span id="show-color">${color_input.value}</span>;
+		background-color: <span id="show-bg-color">${bg_color_input.value}</span>;
+	}</code></pre>`;
+	data_output.innerHTML = outputStr;
+}
+show_data_output();
