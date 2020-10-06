@@ -1,0 +1,19 @@
+.row {
+	display: flex;
+	justify-content: center;
+}
+.column {
+	width: 300px;
+	height: 300px;
+	border: 1px solid black;
+	margin: 10px;
+}
+.content {
+	margin: 100px 30px;
+}
+.column form {
+	display: flex;
+	flex-direction: column;
+	margin: 40px 30px 40px 30px;
+	line-height: 40px;
+}
