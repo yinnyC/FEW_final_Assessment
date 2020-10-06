@@ -17,7 +17,9 @@
 					<h1>Font Styler</h1>
 					<form>
 						<label>Font Size</label>
-						<input id="input-size" type="number" value="16" />
+						<input id="input-size" type="number" value="40" min="16" />
+						<label>Letter Spacing</label>
+						<input id="input-spacing" type="number" value="0" min="0" />
 						<label>Font Family</label>
 						<select id="select-font">
 							<option value="Helvetic" selected>Helvetic</option>
@@ -25,10 +27,25 @@
 							<option value="Times New Roman">Times New Roman</option>
 							<option value="Georgia">Georgia</option>
 						</select>
+						<label>Font Weight</label>
+						<select id="select-font-weight">
+							<option value="bold" selected>bold</option>
+							<option value="bolder">bolder</option>
+							<option value="normal">normal</option>
+							<option value="lighter">lighter</option>
+						</select>
+						<label>Font Style</label>
+						<select id="select-font-style">
+							<option value="normal" selected>normal</option>
+							<option value="italic">italic</option>
+							<option value="oblique">oblique</option>
+						</select>
 						<label>Font Color</label>
 						<input id="input-color" type="color" value="#000000" />
 						<label>Background Color</label>
 						<input id="input-bg-color" type="color" value="#ffffff" />
+						<label>Padding</label>
+						<input id="input-padding" type="number" value="0" min="0" />
 						<label>Enter Text</label>
 						<textarea id="enter-text">Sample Text</textarea>
 					</form>
