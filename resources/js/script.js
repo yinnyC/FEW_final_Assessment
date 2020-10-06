@@ -1,11 +1,12 @@
 const headline_display_container = document.getElementById('headline-display');
-function update_headline() {
+
+function add_headline() {
 	let headlineStr = '';
 	const headline_input = document.getElementById('enter-text');
 	headlineStr += `<h1 id="headline">${headline_input.value}</h1>`;
 	headline_display_container.innerHTML = headlineStr;
 }
-update_headline();
+add_headline();
 const display_target = document.getElementById('headline');
 function update_font_size() {
 	const sizeInput = document.getElementById('input-size');
@@ -23,6 +24,10 @@ function update_bg_color() {
 	const bg_color_input = document.getElementById('input-bg-color');
 	display_target.style.backgroundColor = bg_color_input.value;
 }
+function update_headline() {
+	const headline_input = document.getElementById('enter-text');
+	display_target.innerHTML = headline_input.value;
+}
 update_fontfamily();
 update_font_size();
 update_color();
@@ -31,6 +36,7 @@ update_bg_color();
 // Handling the dymatic update
 const data_input = document.getElementById('data-input');
 data_input.onchange = function (e) {
+	show_data_output();
 	if (e.target && e.target.id === 'input-size') {
 		update_font_size();
 	} else if (e.target && e.target.id === 'select-font') {
@@ -53,7 +59,8 @@ function show_data_output() {
 	const fontfamily_input = document.getElementById('select-font');
 	const color_input = document.getElementById('input-color');
 	const bg_color_input = document.getElementById('input-bg-color');
-	outputStr += `<pre><code>.headline {
+	outputStr += `<h1>Font Settings</h1>
+	<pre><code>.headline {
 		font-size: <span id="show-size">${sizeInput.value}</span>px;
 		font-family: <span id="show-font">${fontfamily_input.value}</span>;
 		color: <span id="show-color">${color_input.value}</span>;

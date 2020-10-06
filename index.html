@@ -7,32 +7,39 @@
 		<link rel="stylesheet" href="resources/css/style.css" />
 	</head>
 	<body>
-		<section id="student-info">
-			<h1>Yin Chang</h1>
-			<p>My favorite color is Orange and I wear Adidas</p>
-		</section>
-		<section id="data-input">
-			<h1>Font Styler</h1>
-			<form>
-				<label>Font Size</label>
-				<input id="input-size" type="number" value="16" />
-				<label>Font Family</label>
-				<select id="select-font">
-					<option value="Helvetic" selected>Helvetic</option>
-					<option value="Arial">Arial</option>
-					<option value="Times New Roman">Times New Roman</option>
-					<option value="Georgia">Georgia</option>
-				</select>
-				<label>Font Color</label>
-				<input id="input-color" type="color" value="#000000" />
-				<label>Background Color</label>
-				<input id="input-bg-color" type="color" value="#ffffff" />
-				<label>Enter Text</label>
-				<textarea id="enter-text">Sample Text</textarea>
-			</form>
-		</section>
-		<section id="headline-display"></section>
-		<section id="data-output"></section>
+		<div id="container">
+			<div class="column">
+				<section id="student-info">
+					<h1>Yin Chang</h1>
+					<p>My favorite color is Orange and I wear Adidas</p>
+				</section>
+				<section id="data-input">
+					<h1>Font Styler</h1>
+					<form>
+						<label>Font Size</label>
+						<input id="input-size" type="number" value="16" />
+						<label>Font Family</label>
+						<select id="select-font">
+							<option value="Helvetic" selected>Helvetic</option>
+							<option value="Arial">Arial</option>
+							<option value="Times New Roman">Times New Roman</option>
+							<option value="Georgia">Georgia</option>
+						</select>
+						<label>Font Color</label>
+						<input id="input-color" type="color" value="#000000" />
+						<label>Background Color</label>
+						<input id="input-bg-color" type="color" value="#ffffff" />
+						<label>Enter Text</label>
+						<textarea id="enter-text">Sample Text</textarea>
+					</form>
+				</section>
+			</div>
+			<div class="column">
+				<section id="headline-display"></section>
+				<section id="data-output"></section>
+			</div>
+		</div>
+
 		<script src="resources/js/script.js" type="module"></script>
 	</body>
 </html>
